@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBar</title>
+    <link rel="stylesheet"href="navbar.css">
+    <script src="https://kit.fontawesome.com/629044acfa.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="headbar">
+        <div id="boxl">
+            <a href="home.html">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/myntra-2709168-2249158.png"/>;
+            </a>
+            <div onclick="window.location.href='men.html'">MEN</div>           
+            <div onclick="window.location.href='women.html'">WOMEN</div>
+            <div >KIDS</div>
+            <div>HOME & LIVING</div>
+            <div>BEAUTY</div>
+            <div>STUDIO<sup>New</sup></div>
+        </div>
+        
+        <div id="boxm">
+            <input type="text" placeholder="Search for products brand and more">
+        </div>
+        <div id="boxr">
+            <div class="profile">
+                <i class="fas fa-user"></i>
+                <p>Profile</p>
+               <div class="dropdown-content">
+                   <div class="dc_b1">
+                       <p>Welcome</p>
+                       <p>To access account and manage order</p>
+                       <button onclick="window.location.href='signup.html'">SIGN UP</a>
+                       <button onclick="window.location.href='login.html'">LOG IN</a>
+                   </div>
+                   <hr>
+                   <div class="dc_b2">
+                       <p onclick= "window.location.href='my_orders.html'">My Orders</p>
+                       <p onclick= "window.location.href='wishlist.html'">Wishlist</p>
+                       <p>Gift Cards</p>
+                       <p>Coupons</p>
+                   </div>
+               </div>    
+            </div>
+            <div class="wl">
+                    <i  onclick= "window.location.href='wishlist.html'" class="fas fa-heart"></i>
+                <p>Wishlist</p></div>
+            <div class="crt" onclick= "window.location.href='cart.html'"><i class="fas fa-shopping-cart"></i><p>Bag</p></div>
+        </div>
+    </div>
+</body>
+</html>
