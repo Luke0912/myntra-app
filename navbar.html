@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NavBar</title>
-    <link rel="stylesheet"href="navbar.css">
+    <link rel="stylesheet"href="nav_bar.css">
     <script src="https://kit.fontawesome.com/629044acfa.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -14,9 +14,43 @@
             <a href="home.html">
                 <img src="https://cdn.iconscout.com/icon/free/png-256/myntra-2709168-2249158.png"/>;
             </a>
-            <div onclick="window.location.href='men.html'">MEN</div>           
-            <div onclick="window.location.href='women.html'">WOMEN</div>
-            <div >KIDS</div>
+            <div class="men">
+                <a onclick="window.location.href='men.html'">MEN</a> 
+                <div class="dropdown-content_men">
+                    <hr>
+                    <div class="ddm_men">
+                        <div>
+                            <h6>TopWear</h6>
+                            <p>T-Shirts</p>
+                            <p>Jackets</p>
+                        </div>
+                        <div>
+                            <h6>BottomWear</h6>
+                            <p>Jeans</p>
+                            <p>Shoes</p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="men">
+                <div onclick="window.location.href='women.html'">WOMEN</div>
+                <div class="dropdown-content_men">
+                    <hr>
+                    <div class="ddm_men">
+                        <div>
+                            <h6>TopWear</h6>
+                            <p>Kurtas</p>
+                            <p>Jackets</p>
+                        </div>
+                        <div>
+                            <h6>BottomWear</h6>
+                            <p>Jeans</p>
+                            <p>Shoes</p>
+                        </div>
+                    </div> 
+                </div>
+            </div>   
+            <div>KIDS</div>
             <div>HOME & LIVING</div>
             <div>BEAUTY</div>
             <div>STUDIO<sup>New</sup></div>
@@ -30,6 +64,7 @@
                 <i class="fas fa-user"></i>
                 <p>Profile</p>
                <div class="dropdown-content">
+                   <hr>
                    <div class="dc_b1">
                        <p>Welcome</p>
                        <p>To access account and manage order</p>
