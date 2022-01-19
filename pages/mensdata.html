@@ -71,7 +71,7 @@ var mensdata=[
      brandname:"NIKE",
      rating:"4.4"},
 
-     {image_link:"https://www.myntra.com/jeans/flying-machine/flying-machine-men-charcoal-grey-skinny-fit-low-rise-heavy-fade-stretchable-jeans/15389552/buy",
+     {image_link:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/2948543/2018/3/30/11522394099790-HIGHLANDER-Men-Black-Slim-Fit-Mid-Rise-Clean-Look-Stretchable-Jeans-5171522394099590-1.jpg",
      category:"Jeans",
      name:"Men Stretchable  Jeans",
      price:1319,
@@ -97,9 +97,9 @@ var mensdata=[
 
      //shoes
      {
-image_link:"https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/14782490/2021/8/10/c0aab67d-58cd-49cf-aeb4-b65e4d81f3f51628575865502-ADIDAS-Men-Sports-Shoes-4691628575865048-1.jpg",
-category:"Shoes",
-name: "Men Running Shoes",
+      image_link:"https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/14782490/2021/8/10/c0aab67d-58cd-49cf-aeb4-b65e4d81f3f51628575865502-ADIDAS-Men-Sports-Shoes-4691628575865048-1.jpg",
+      category:"Shoes",
+      name: "Men Running Shoes",
 price:4500,
 strikedoffprice:6000,
 brandname:"ADIDAS",
@@ -426,4 +426,9 @@ rating:"4.4",
 
                 ]
 
+
+                var M=JSON.stringify(mensdata);
+                localStorage.setItem("mensData",M);
+                console.log(M)
                 </script>
+
