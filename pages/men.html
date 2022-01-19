@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="men.css">
+</head>
+
+<body>
+    
+    <div id="top">
+        <p>Home / Clothing / Men Clothing</p>
+
+        <div id="sorting">
+        <h3 >FILTERS</h3>
+       
+         <select id="priceSort" onchange="handlePriceSort()">
+            <option value="">Sort By : <h4>Recommended</h4></option>
+            <option value="high">High to low</option>
+            <option value="low">Low to high</option>
+          </select>
+        </div>  
+    </div>
+    <hr id = "tophr">
+    <div id="bottom">
+        <div id="left">
+            <h3>Categories</h3>
+            
+            <select  id="category" onchange="category()">
+                <option value="">select Category</option>
+                <option value="Jeans">Jeans</option>
+                <option value="Casual Shirts">Casual Shirts</option>
+                <option value="Shoes">Shoes</option>
+                <option value="Jacket">Jacket</option>
+              </select>
+
+              <hr>
+
+              <h3>Brand</h3>
+
+              <select id="filterbrand" onchange="filterbrand()">
+                <option value="">Filter By Brand Name</option>
+                <option  value="NIKE">Nike</option>
+                <option  value="ADIDAS">Adidas</option>
+                <option  value="ROADSTER">Roadster</option>
+                <option  value="WROGN">Wrogn</option>
+            </select>
+        </div>
+        <div id="container">
+
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    var mensData = JSON.parse(localStorage.getItem("mensdata"))
+    console.log(mensData);
+
+    var cart =JSON.parse(localStorage.getItem("CartItems"))||[]
+
+    displayData(mensData);
+
+    var wishlist =JSON.parse(localStorage.getItem("WishlistItems"))||[]
+
+    displayData(mensData);
+
+function handlePriceSort(){
+   var selected = document.querySelector("#priceSort").value
+   console.log(selected)
+   if(selected == "high"){
+     //decending
+     mensData.sort(function(a,b){
+       return b.price-a.price
+     })
+     
+   }
+   if(selected == "low"){
+     //accending
+     mensData.sort(function(a,b){
+       return a.price-b.price;
+     })
+   }
+   // console.log(mensdata)
+   displayData(mensData);
+
+ }
+
+ function filterbrand(){
+   var selected = document.querySelector("#filterbrand").value
+   console.log(selected);
+
+   var filtername = mensData.filter(function(elem){
+     return elem.brandname == selected;
+   })
+   console.log(filtername)
+   displayData(filtername)
+ }
+
+ displayData(mensData)
+
+ function category(){
+     var selectcategory = document.querySelector("#category").value
+     
+     var categoryname = mensData.filter(function(elem){
+         return elem.category == selectcategory;
+     })
+     displayData(categoryname)
+ }
+
+               function displayData(mensData){
+   document.querySelector("#container").innerHTML=""
+
+   mensData.map(function (data){
+       var div = document.createElement("div");
+
+       //create image
+       var img = document.createElement('img');
+       img.setAttribute("src",data.image_link);
+
+       //name creation
+       var name = document.createElement("p");
+       name.textContent = data.name;
+
+       var brand =document.createElement("h4");
+       brand.textContent = data.brandname;
+
+       //price  creation;
+       var div2 = document.createElement("div");
+       div2.setAttribute("id","flex")
+ 
+
+       var p1=document.createElement("p")
+       p1.style.fontWeight="700"
+       p1.textContent=`Rs.${data.price}`
+
+       var p2=document.createElement("p")
+       p2.textContent=`Rs.${data.strikedoffprice}`
+       p2.style.textDecoration = "Line-through"
+
+       var p3 = document.createElement("p")
+       p3.setAttribute("id","percentoff")
+       p3.textContent = "( "+(Math.floor((data.strikedoffprice-data.price)/(data.strikedoffprice)*100))+"%off)"
+
+       div2.append(p1,p2,p3)
+
+       
+
+       ///add to cart button creation
+       
+       var btn1 = document.createElement("button")
+       btn1.setAttribute("id","wishlist") 
+       btn1.textContent = " ♡ WISHLIST"
+
+       btn1.addEventListener("click",function(){
+         addtowishlist(data);
+       });
+
+       var btn = document.createElement("button")
+       btn.setAttribute("id","bag")
+       btn.textContent = "MOVE TO BAG";
+
+       ///add eventlistener
+
+       btn.addEventListener("click",function(){
+         addtocart(data);
+       });
+
+       
+
+       //append
+       div.append(img,btn1,brand,name,div2,btn)
+
+
+       document.querySelector("#container").append(div)
+   })
+ }
+
+ function addtocart(data){
+     console.log(data, "data");
+     cart.push(data);
+     localStorage.setItem("CartItems",JSON.stringify(cart))
+     alert("added successfully");
+
+   }
+
+   function addtowishlist(data){
+    //  console.log(data, "data");
+     wishlist.push(data);
+     localStorage.setItem("WishlistItems",JSON.stringify(wishlist))
+     alert("added to wishlist");
+
+   }
+</script>
