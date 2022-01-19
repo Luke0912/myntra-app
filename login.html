@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup Myntra</title>
-    <link rel="stylesheet"href="signup.css">
+    <title>Login Myntra</title>
     <link rel="stylesheet"href="nav_bar.css">
+    <link rel="stylesheet"href="login.css">
     <script src="https://kit.fontawesome.com/629044acfa.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -87,60 +87,43 @@
             <div class="crt_vam" onclick= "window.location.href='cart.html'"><i class="fas fa-shopping-cart"></i><p>Bag</p></div>
         </div>
     </div>
-    <div id="signup_vam_2">
-        <div id="boxu_vam_2">
+    <div id="signin_vam3">
+        <div id="boxu_vam3">
             <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/2021/12/29/e0f67808-f8b9-42b0-80ae-805fdf745cad1640802248099-Banner_Login-Landing-page--1-.jpg">
         </div>
-        <div id="boxd_vam_2">
-            <h2>Sign-Up</h2>
-            <form id="form_vam_2">
-             <input class="names_vam_2" type="text" placeholder="Enter Name"/>
-             <input class="email_vam_2" type="email" placeholder="Enter Email"/>  
-             <input class="mobile_vam_2"type="mobile" placeholder="+91| Mobile Number"/>  
-             <input class="user_vam_2"type="text" placeholder="Enter User Name"/>
-             <input class="pass_vam_2" type="password" placeholder="Enter Password"/>
-             <input id="btn_vam_2" type="submit" value="Sign-Up"/>  
+        <div id="boxd_vam3">
+            <h2>Sign-In</h2>
+            <form id="form_vam3">
+             <input class="user_vam3"type="text" placeholder="Enter User Name"/>
+             <input class="pass_vam3" type="password" placeholder="Enter Password"/>
+             <p>By continuing,I agree to the <span class="pink_vam3">Terms Of Use</span>  & <span class="pink_vam3">Privacy Policy</span> </p>
+             <input id="btn_vam3" type="submit" value="Sign-In"/>  
             </form>
-        </div>
-    </div>
+        </div>  
 </body>
 </html>
 <script>
-    document.querySelector("#form_vam_2").addEventListener("submit",myfun_vam);
-    var User_data=JSON.parse(localStorage.getItem("UserD"))||[];
-    function myfun_vam(event){
+    document.querySelector("#form_vam3").addEventListener("submit",myfun);
+    var User_data=JSON.parse(localStorage.getItem("UserD"));
+    function myfun(event){
         event.preventDefault();
-        var name=document.querySelector(".names_vam_2").value;
-        var em=document.querySelector(".email_vam_2").value;
-        var mb=document.querySelector(".mobile_vam_2").value;
-        var usr=document.querySelector(".user_vam_2").value;
-        var pass=document.querySelector(".pass_vam_2").value;
-        var data={
-            nam:name,
-            mail:em,
-            mobile:mb,
-            user:usr,
-            passwrd:pass
-        };
-        if(name=="" || em=="" || mb=="" || usr==""){
-            alert("Please fill all the fields")
-        }
-        else{
-            if(mb.length!=10){
-                alert("Enter a valid Mobile Number")
+        var usr=document.querySelector(".user_vam3").value;
+        var pass=document.querySelector(".pass_vam3").value;
+       var count=0;
+        User_data.map(function(elem,i){
+            
+            if(usr==elem.user&&pass==elem.passwrd){
+                alert("Login Succesful");
+                window.location.href="home.html";
+                count++;            
             }
             else{
-                User_data.push(data);
-                var Array=JSON.stringify(User_data);
-                localStorage.setItem("UserD",Array);
-                alert("Sign-up Sucessful")
-                window.location.href="login.html"
+                if(i==User_data.length-1&&count==0){
+                alert("Authentification Failed");
+                }
             }
-            
-        }
-       
-        //console.log("clic");
+             
+        });
     }
-
- 
+   
 </script>
