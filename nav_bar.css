@@ -128,10 +128,10 @@ margin-top: 25px;
 .crt_vam>p{
   margin-left: -1px;
 }
-.dc_b2>p:hover{
+.dc_b2_vam>p:hover{
   font-weight: 550;
 }
-.dc_b1>button:hover{
+.dc_b1_vam>button:hover{
   border: solid rgba(255, 94, 0, 0.459) 1px;
  
   position: relative;
