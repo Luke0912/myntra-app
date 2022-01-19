@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"href="signup.css">
+</head>
+<body>
+    <div id="signup_vam_2">
+        <div id="boxu_vam_2">
+            <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/2021/12/29/e0f67808-f8b9-42b0-80ae-805fdf745cad1640802248099-Banner_Login-Landing-page--1-.jpg">
+        </div>
+        <div id="boxd_vam_2">
+            <h2>Sign-Up</h2>
+            <form id="form_vam_2">
+             <input class="names_vam_2" type="text" placeholder="Enter Name"/>
+             <input class="email_vam_2" type="email" placeholder="Enter Email"/>  
+             <input class="mobile_vam_2"type="mobile" placeholder="+91| Mobile Number"/>  
+             <input class="user_vam_2"type="text" placeholder="Enter User Name"/>
+             <input class="pass_vam_2" type="password" placeholder="Enter Password"/>
+             <input id="btn_vam_2" type="submit" value="Sign-Up"/>  
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    document.querySelector("#form_vam_2").addEventListener("submit",myfun_vam);
+    var User_data=JSON.parse(localStorage.getItem("UserD"))||[];
+    function myfun_vam(event){
+        event.preventDefault();
+        var name=document.querySelector(".names_vam_2").value;
+        var em=document.querySelector(".email_vam_2").value;
+        var mb=document.querySelector(".mobile_vam_2").value;
+        var usr=document.querySelector(".user_vam_2").value;
+        var pass=document.querySelector(".pass_vam_2").value;
+        var data={
+            nam:name,
+            mail:em,
+            mobile:mb,
+            user:usr,
+            passwrd:pass
+        };
+        if(name=="" || em=="" || mb=="" || usr==""){
+            alert("Please fill all the fields")
+        }
+        else{
+            if(mb.length!=10){
+                alert("Enter a valid Mobile Number")
+            }
+            else{
+                User_data.push(data);
+                var Array=JSON.stringify(User_data);
+                localStorage.setItem("UserD",Array);
+                alert("Sign-up Sucessful")
+                window.location.href="login.html"
+            }
+            
+        }
+       
+        //console.log("clic");
+    }
+
+ 
+</script>
