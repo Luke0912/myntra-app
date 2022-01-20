@@ -102,9 +102,9 @@
   </html>
     </header>
     <footer></footer>
-    <div id="l1">
+    <div onclick="inoutFunction()" id="l1">
       <div id="l2">
-        <i onclick="inoutFunction()" class="fas  fa-caret-left"></i>
+        <i class="fas  fa-caret-left"></i>
         <p>FLAT₹400OFF</p>
       </div>
       <div id="l3">
@@ -669,6 +669,6 @@
 </html>
 <script>
   function inoutFunction(){
-    document.getElementById("l1").style.right = ("0")
+    document.querySelector("#l1").style.right = ("0")
   }
 </script>
