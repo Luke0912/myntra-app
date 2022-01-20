@@ -26,27 +26,28 @@
     <hr id = "tophr">
     <div id="bottom">
         <div id="left">
-            <h3>Categories</h3>
-            
-            <select  id="category" onchange="category()">
-                <option value="">select Category</option>
-                <option value="Jeans">Jeans</option>
-                <option value="Casual Shirts">Casual Shirts</option>
-                <option value="Shoes">Shoes</option>
-                <option value="Jacket">Jacket</option>
-              </select>
 
-              <hr>
+          
+            <h3>Categories</h3>
+           
+            <input type="checkbox" class="category" value="Shoes" onclick="category()">Shoes</input><br>
+            <input type="checkbox" class="category" value="Jacket" onclick="category()">Jacket</input><br>
+            <input type="checkbox" class="category" value="Jeans" onclick="category()">Jeans</input><br>
+            <input type="checkbox" class="category" value="Casual Shirts" onclick="category()">Casual Shirts</input><br>
+             
+           
+
+              <hr id="bottomhr">
 
               <h3>Brand</h3>
 
-              <select id="filterbrand" onchange="filterbrand()">
-                <option value="">Filter By Brand Name</option>
+              <input type="checkbox" id="filterbrand" value="ADIDAS" onclick="filterbrand()">Adidas</input><br>
+                <!-- <option value="">Filter By Brand Name</option>
                 <option  value="NIKE">Nike</option>
                 <option  value="ADIDAS">Adidas</option>
                 <option  value="ROADSTER">Roadster</option>
-                <option  value="WROGN">Wrogn</option>
-            </select>
+                <option  value="WROGN">Wrogn</option> -->
+          
         </div>
         <div id="container">
 
@@ -66,6 +67,8 @@
     var wishlist =JSON.parse(localStorage.getItem("WishlistItems"))||[]
 
     displayData(mensData);
+
+    
 
 function handlePriceSort(){
    var selected = document.querySelector("#priceSort").value
@@ -102,8 +105,8 @@ function handlePriceSort(){
  displayData(mensData)
 
  function category(){
-     var selectcategory = document.querySelector("#category").value
-     
+     var selectcategory = document.querySelector(".category").value
+     console.log(selectcategory)
      var categoryname = mensData.filter(function(elem){
          return elem.category == selectcategory;
      })
@@ -148,8 +151,8 @@ function handlePriceSort(){
 
        
 
-       ///add to cart button creation
-       
+     
+       // wishlist
        var btn1 = document.createElement("button")
        btn1.setAttribute("id","wishlist") 
        btn1.textContent = " ♡ WISHLIST"
@@ -158,11 +161,12 @@ function handlePriceSort(){
          addtowishlist(data);
        });
 
+
+       //  add to bag
        var btn = document.createElement("button")
        btn.setAttribute("id","bag")
        btn.textContent = "MOVE TO BAG";
 
-       ///add eventlistener
 
        btn.addEventListener("click",function(){
          addtocart(data);
