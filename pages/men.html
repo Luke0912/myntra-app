@@ -30,10 +30,10 @@
           
             <h3>Categories</h3>
            
-            <input type="checkbox" class="category" value="Shoes" onclick="category()">Shoes</input><br>
-            <input type="checkbox" class="category" value="Jacket" onclick="category()">Jacket</input><br>
-            <input type="checkbox" class="category" value="Jeans" onclick="category()">Jeans</input><br>
-            <input type="checkbox" class="category" value="Casual Shirts" onclick="category()">Casual Shirts</input><br>
+            <input type="checkbox" class="categoryS" value="Shoes" onclick="categorys()">Shoes</input><br>
+            <input type="checkbox" class="categoryJ" value="Jacket" onclick="categoryJ()">Jacket</input><br>
+            <input type="checkbox" class="categoryje" value="Jeans" onclick="categoryje()">Jeans</input><br>
+            <input type="checkbox" class="categoryC" value="Casual Shirts" onclick="categoryC()">Casual Shirts</input><br>
              
            
 
@@ -41,7 +41,10 @@
 
               <h3>Brand</h3>
 
-              <input type="checkbox" id="filterbrand" value="ADIDAS" onclick="filterbrand()">Adidas</input><br>
+              <input type="checkbox" id="filterbrandA" value="ADIDAS" onclick="filterbrandA()">Adidas</input><br>
+              <input type="checkbox" id="filterbrandN" value="NIKE" onclick="filterbrandN()">Nike</input><br>
+              <input type="checkbox" id="filterbrandR" value="ROADSTER" onclick="filterbrandR()">Roadster</input><br>
+              <input type="checkbox" id="filterbrandW" value="WROGN" onclick="filterbrandW()">Wrogn</input><br>
                 <!-- <option value="">Filter By Brand Name</option>
                 <option  value="NIKE">Nike</option>
                 <option  value="ADIDAS">Adidas</option>
@@ -91,8 +94,41 @@ function handlePriceSort(){
 
  }
 
- function filterbrand(){
-   var selected = document.querySelector("#filterbrand").value
+ function filterbrandA(){
+   var selected = document.querySelector("#filterbrandA").value
+   console.log(selected);
+
+   var filtername = mensData.filter(function(elem){
+     return elem.brandname == selected;
+   })
+   console.log(filtername)
+   displayData(filtername)
+ }
+
+ function filterbrandN(){
+   var selected = document.querySelector("#filterbrandN").value
+   console.log(selected);
+
+   var filtername = mensData.filter(function(elem){
+     return elem.brandname == selected;
+   })
+   console.log(filtername)
+   displayData(filtername)
+ }
+
+ function filterbrandW(){
+   var selected = document.querySelector("#filterbrandW").value
+   console.log(selected);
+
+   var filtername = mensData.filter(function(elem){
+     return elem.brandname == selected;
+   })
+   console.log(filtername)
+   displayData(filtername)
+ }
+
+ function filterbrandR(){
+   var selected = document.querySelector("#filterbrandR").value
    console.log(selected);
 
    var filtername = mensData.filter(function(elem){
@@ -104,8 +140,35 @@ function handlePriceSort(){
 
  displayData(mensData)
 
- function category(){
-     var selectcategory = document.querySelector(".category").value
+ function categorys(){
+     var selectcategory = document.querySelector(".categoryS").value
+     console.log(selectcategory)
+     var categoryname = mensData.filter(function(elem){
+         return elem.category == selectcategory;
+     })
+     displayData(categoryname)
+ }
+
+ function categoryJ(){
+     var selectcategory = document.querySelector(".categoryJ").value
+     console.log(selectcategory)
+     var categoryname = mensData.filter(function(elem){
+         return elem.category == selectcategory;
+     })
+     displayData(categoryname)
+ }
+
+ function categoryje(){
+     var selectcategory = document.querySelector(".categoryje").value
+     console.log(selectcategory)
+     var categoryname = mensData.filter(function(elem){
+         return elem.category == selectcategory;
+     })
+     displayData(categoryname)
+ }
+
+ function categoryC(){
+     var selectcategory = document.querySelector(".categoryC").value
      console.log(selectcategory)
      var categoryname = mensData.filter(function(elem){
          return elem.category == selectcategory;
@@ -154,7 +217,7 @@ function handlePriceSort(){
      
        // wishlist
        var btn1 = document.createElement("button")
-       btn1.setAttribute("id","wishlist") 
+       btn1.setAttribute("id","menwishlist") 
        btn1.textContent = " ♡ WISHLIST"
 
        btn1.addEventListener("click",function(){
@@ -164,7 +227,7 @@ function handlePriceSort(){
 
        //  add to bag
        var btn = document.createElement("button")
-       btn.setAttribute("id","bag")
+       btn.setAttribute("id","bagmen")
        btn.textContent = "MOVE TO BAG";
 
 

@@ -6,7 +6,7 @@
     width:80%;
     grid-gap:25px;
     margin-left: 200px;
-    margin-top:-21.5%;
+    margin-top:-26%;
     border-left: 1px solid grey;
     padding:20px;
   
@@ -54,7 +54,7 @@ body{
    width:15%;
    display:block; 
 }
-#bag{
+#bagmen{
     color:rgb(255,75,127);
     width:100%;
     height:5px;
@@ -68,18 +68,20 @@ body{
 #percentoff{
     color:red;
 }
-#wishlist{
-    width:100%;
-    padding:10px;
+#menwishlist{
+    width:90%;
+    padding:8px;
     background-color: white;
-    border:1px solid grey;
+    border:0.5px solid rgb(212, 211, 211);
+    margin-left:5%
+}
+#menwishlist:hover{
+    border:0.5px solid black;
+    
 }
 #tophr{
     margin-top:-2px;
     width:100%;
-    
-   
-    
 }
 #bottomhr{
     width:105%;
