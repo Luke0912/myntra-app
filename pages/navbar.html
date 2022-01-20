@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Myntra</title>
-    <link rel="stylesheet"href="nav_bar.css">
+    <link rel="stylesheet"href="navbar_.css">
     <script src="https://kit.fontawesome.com/629044acfa.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -60,12 +60,15 @@
             <input type="text" placeholder="Search for products brand and more">
         </div>
         <div id="boxr_vam">
+         
             <div class="profile_vam">
                 <i class="fas fa-user"></i>
                 <p>Profile</p>
                <div class="dropdown-content_vam">
                    <hr>
                    <div class="dc_b1_vam">
+                       <p id="hello_vam"></p>
+                       <hr>
                        <p>Welcome</p>
                        <p>To access account and manage order</p>
                        <button onclick="window.location.href='signup.html'">SIGN UP</a>
@@ -88,3 +91,7 @@
     </div>
 </body>
 </html>
+<script> 
+  var user_name=(localStorage.getItem("User_name"));
+  document.querySelector("#hello_vam").textContent="Hello "+user_name;
+  </script>

@@ -35,7 +35,7 @@
             </div>
             <div class="men_vam">
                 <div onclick="window.location.href='women.html'">WOMEN</div>
-                <div class="dropdown-content_men_vam">
+                 <div class="dropdown-content_men_vam">
                     <hr>
                     <div class="ddm_men_vam">
                         <div>
@@ -49,7 +49,7 @@
                             <p>Shoes</p>
                         </div>
                     </div> 
-                </div>
+                </div> 
             </div>   
             <div>KIDS</div>
             <div>HOME & LIVING</div>
@@ -115,7 +115,10 @@
             
             if(usr==elem.user&&pass==elem.passwrd){
                 alert("Login Succesful");
-                window.location.href="home.html";
+                var user_id="";
+                user_id=document.querySelector(".user_vam3").value;                
+                localStorage.setItem("User_name",user_id);
+                window.location.href="landing_page.html";
                 count++;            
             }
             else{
