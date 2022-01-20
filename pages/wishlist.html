@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet"href="nav_bar.css">
+    <script src="https://kit.fontawesome.com/629044acfa.js" crossorigin="anonymous"></script>
+
     <style>
         #containerwish{
     display:grid;
@@ -23,6 +27,7 @@
     /* margin:auto; */
     margin-bottom: 10%;
     /* margin-top: */
+ text-align: center;
    
     
 }
@@ -39,20 +44,23 @@ img{
     width:100%
 }
 #flexwish{
-    margin-top:2%;
+    margin-top:4% ;
+    margin-bottom: 4%;
   display:flex;
-  justify-content: space-between;
+  justify-content: space-around;
   /* margin-left:-5% ; */
 
 
 }
 p,h4{
     margin-left:0px;
-    margin-top:0px;
+    margin-top:2%;
    
 }
 h4{
-    margin-bottom:2%;
+    margin-bottom:3%;
+    font-size:15px;
+   font-family: Helvetica,Arial,sans-serif;
 }
 /* body{
     font-family: sans-serif;
@@ -129,19 +137,99 @@ h2{
 
 #deletewish{
     width:50%;
-    padding:2px;
+    padding:2%;
     margin:auto;
     display: block;
-    margin-top: 2%;
+    margin-top: 3%;
     border-radius: 5px;
     border:0;
     background-color:thistle;
 }
 
+.price{
+    font-size:larger;
+}
 
     </style>
 </head>
 <body>
+    <div id="headbar_vam">
+        <div id="boxl_vam">
+            <a href="landing_page.html">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/myntra-2709168-2249158.png"/>
+            </a>
+            <div class="men_vam">
+                <a onclick="window.location.href='men.html'">MEN</a> 
+                <div class="dropdown-content_men_vam">
+                    <hr>
+                    <div class="ddm_men_vam">
+                        <div>
+                            <h6>TopWear</h6>
+                            <p>T-Shirts</p>
+                            <p>Jackets</p>
+                        </div>
+                        <div>
+                            <h6>BottomWear</h6>
+                            <p>Jeans</p>
+                            <p>Shoes</p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="men_vam">
+                <div onclick="window.location.href='women.html'">WOMEN</div>
+                <div class="dropdown-content_men_vam">
+                    <hr>
+                    <div class="ddm_men_vam">
+                        <div>
+                            <h6>TopWear</h6>
+                            <p>Kurtas</p>
+                            <p>Jackets</p>
+                        </div>
+                        <div>
+                            <h6>BottomWear</h6>
+                            <p>Jeans</p>
+                            <p>Shoes</p>
+                        </div>
+                    </div> 
+                </div>
+            </div>   
+            <div>KIDS</div>
+            <div>HOME & LIVING</div>
+            <div>BEAUTY</div>
+            <div>STUDIO<sup>New</sup></div>
+        </div>
+        
+        <div id="boxm_vam">
+            <input type="text" placeholder="Search for products brand and more">
+        </div>
+        <div id="boxr_vam">
+            <div class="profile_vam">
+                <i class="fas fa-user"></i>
+                <p>Profile</p>
+               <div class="dropdown-content_vam">
+                   <hr>
+                   <div class="dc_b1_vam">
+                       <p>Welcome</p>
+                       <p>To access account and manage order</p>
+                       <button onclick="window.location.href='signup.html'">SIGN UP</a>
+                       <button onclick="window.location.href='login.html'">LOG IN</a>
+                   </div>
+                   <hr>
+                   <div class="dc_b2_vam">
+                       <p onclick= "window.location.href='my_orders.html'">My Orders</p>
+                       <p onclick= "window.location.href='wishlist.html'">Wishlist</p>
+                       <p>Gift Cards</p>
+                       <p>Coupons</p>
+                   </div>
+               </div>    
+            </div>
+            <div class="wl_vam">
+                    <i  onclick= "window.location.href='wishlist.html'" class="fas fa-heart"></i>
+                <p>Wishlist</p></div>
+            <div class="crt_vam" onclick= "window.location.href='cart.html'"><i class="fas fa-shopping-cart"></i><p>Bag</p></div>
+        </div>
+    </div>
    <h2></h2>
     <div id="containerwish"></div>
 </body>
@@ -176,6 +264,7 @@ h2{
  
 
        var p1=document.createElement("p")
+       p1.setAttribute("class","price")
        p1.style.fontWeight="700"
        p1.textContent=`Rs.${data.price}`
 
@@ -242,7 +331,9 @@ h2{
 
    function deletewish(index){
        wishlistArr.splice(index,1);
-       localStorage.setItem("wishlistdlt",JSON.stringify(wishlistArr));
+       localStorage.setItem("WishlistItems",JSON.stringify(wishlistArr));
        displayData(wishlistArr);
+       document.querySelector("h2").textContent=`My Wishlist ${wishlistArr.length} items`
    }
+  
 </script>
