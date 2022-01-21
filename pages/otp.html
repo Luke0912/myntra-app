@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #otpbox{
+            width:30%;
+            /* margin:10%; */
+            /* border:1px solid red; */
+            padding:5%;
+            margin:auto;
+            text-align:center;
+
+        }
+        h2,p,#otpenter,#confirm{
+            font-family:Helvetica,Arial,sans-serif;
+        }
+        p{
+            color:grey
+        }
+        #otpenter{
+          padding:15px;
+          width:70%;
+          font-size: large; 
+          text-align: center; 
+          border-radius:30px;
+          border:1px solid grey;
+        }
+   #confirm{
+       background-color: rgb(238, 105, 176);
+       color:white;
+       padding:20px;
+       width:80%;
+       margin-top: 30px;
+       border:0;
+       font-size: large; 
+       border-radius:30px;
+
+   }
+   #confirm:hover{
+       background-color:darkgreen;
+       border:1px solid black;
+       /* color:black; */
+   }
+
+    </style>
+</head>
+<body>
+    <div id="otpbox">
+        <form>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLvfoXdHn07ToY8z2CzRkjEjrCEdqqHWB45g&usqp=CAU">
+        <h2>Enter One Time Password(OTP)</h2>
+        <p>Myntra has sent you an otp on your registered mobile number +91-**********</p>
+        <input type="password" id="otpenter" placeholder="Enter OTP here">
+        <br>
+        <input type="submit" id="confirm" value="CONFIRM"/>
+        </form>
+    </div>
+</body>
+</html>
+<script>
+document.querySelector("form").addEventListener("submit", confirm);
+var x=localStorage.setItem("User_name")
+function confirm(event){
+    event.preventDefault();
+        var selected= document.querySelector("#otpenter").value;
+        if(selected=="1234"){
+            alert(x+" order has been placed successfully");
+            var o=JSON.parse(localStorage.getItem("CartItems"));
+            console.log(o);
+           localStorage.setItem("My_orders",JSON.stringify(o));
+
+           localStorage.removeItem("CartItems");
+        }
+    
+
+}
+</script>
