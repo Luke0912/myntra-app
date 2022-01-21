@@ -8,7 +8,7 @@
     margin-top:0%;
     border-left: 1px solid grey;
     padding:2%;
-    line-height: 180%;
+    line-height: 140%;
     text-align: center; 
     padding-bottom: 20%;
     
@@ -34,14 +34,14 @@ body{
 #top{    
    font-size: 90%;
    margin-top:8%;
-   padding:1%
+   padding:1%;
 }
 
 #priceSort{
    margin-left:70%;
-   width:18%;
-   height:40px;
-   /* margin-bottom: -50px; */
+   width:20%;
+   padding:0.5%;
+   font-size:110%;
 }
 #sorting{
    display:flex;
@@ -51,7 +51,8 @@ body{
 #left{
    width:15%;
    display:block; 
-   padding:1%
+   padding:1%;
+   font-size:1rem;
 }
 #bagmen{
     color:rgb(255,75,127);
@@ -102,6 +103,7 @@ body{
     width:50px;
     height:15px; 
 }
+
 #filterbrandN{
     width:50px;
     height:15px; 
@@ -136,3 +138,67 @@ body{
     color:grey
 }
 
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
+    #containermen{
+    
+    grid-template-columns: repeat(3, 1fr);  
+}
+}
+
+
+@media only screen and (min-width: 500px) and (max-width: 900px) {
+    #containermen{
+    
+    grid-template-columns: repeat(2, 1fr);  
+}
+#top{
+    margin-top:17%;
+}
+#left{
+    font-size:0.8rem
+}
+}
+
+
+
+@media only screen and (min-width: 0) and (max-width: 599px) {
+    #containermen{
+    
+    grid-template-columns: repeat(1, 1fr);
+    margin-left: 10%;
+    border-left: 0;
+}
+#left{
+    display:none;
+    width:10%;
+    font-size:80%
+}
+#top{
+    font-size: small;
+    margin-top:25%;
+}
+#pricesort{
+    margin-left:-50%;
+}
+h4{
+    font-size:80%
+}
+}
+label input {
+    display: none; 
+}
+
+label span {
+    height: 10px;
+    width: 10px;
+    border: 1px solid grey;
+    display: inline-block;
+    position: relative;
+}
+
+[type=checkbox]:checked + span:before {
+    content: '\2714';
+    position: absolute;
+    top: -5px;
+    left: 0;
+}
