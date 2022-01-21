@@ -1,9 +1,7 @@
 #mainarea{
+    margin: 200px 0 0 230px;
     padding: 5px;
-    margin-top: 170px;
     width:80%;
-    border: 1px solid  red;
-    margin:auto;
 }
 #mainarea>div>h3{
     margin-bottom: 0;
@@ -19,19 +17,20 @@
     display: grid;
     display: flex;
     justify-content: space-around;
-    border: solid teal 3px;
 }
 #c1{
     width: 25%;
     padding: 2px;
     color: grey;
     font-family: sans-serif;
-    border: solid yellow 2px;
+}
+#line{
+    height: 440px;
+    width: 1px;
+    background-color: black;
 }
 #c2{
     width: 54%;
-    /* padding: 2px; */
-    border:solid red 2px;
     display: grid;
     grid-template-columns: repeat(1,100%);
     grid-gap: 40px;
@@ -39,16 +38,13 @@
 }
 
 .boxi_vam_4{
-    border: solid green 2px;
     padding: 10px;
     display: flex;
 }
 .boxl_vam_4>img{
     height: 150px;
-    /* width: 180px; */
 }
 .boxr_vam_4{
-  /* border: solid teal 1px;   */
   margin-left: 30px;
   margin-top: 20px;
   margin-bottom: 20px;
