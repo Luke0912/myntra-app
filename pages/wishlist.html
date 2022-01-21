@@ -10,182 +10,193 @@
     <script src="https://kit.fontawesome.com/629044acfa.js" crossorigin="anonymous"></script>
 
     <style>
-     #containerwish{
-    display:grid;
-    grid-template-columns: repeat(4,1fr);
-    color:rgb(26, 25, 25);
-    grid-gap:5%;
-    padding:5%;
-    width:90%;
-    margin-bottom: 10%;
-    text-align: center;
-    padding-bottom: 30%;
+        #containerwish{
+       display:grid;
+       grid-template-columns: repeat(4,1fr);
+       color:rgb(26, 25, 25);
+       grid-gap:5%;
+       padding:5%;
+       width:90%;
+       margin-bottom: 10%;
+       text-align: center;
+       padding-bottom: 30%;
+      
+   }
+   #containerwish>div{
+       background-color:whitesmoke;
+   }
+   #containerwish>div:hover{
+       box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+   }
+   img{
+       height:60%;
+       width:100%
+   }
+   #flexwish{
+       margin-top:4% ;
+       margin-bottom: 4%;
+     display:flex;
+     justify-content: space-around;
+   }
+   p,h4{
+       margin-left:0px;
+       margin-top:2%;  
+   }
+   h4{
+       margin-bottom:3%;
+       font-size:15px;
+       font-family: Helvetica,Arial,sans-serif;
+   }
+   #bagwish{
+       color:white;
+       width:90%;
+       height:30px;
+       font-size:small;
+       border:0;
+       margin-top:-10px;
+       background-color:rgb(230, 20, 125);
+       border-radius:15px;
+       display:block;
+       margin:auto;
+   }
    
-}
-#containerwish>div{
-    background-color:whitesmoke;
-}
-#containerwish>div:hover{
-    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
-}
-img{
-    height:60%;
-    width:100%
-}
-#flexwish{
-    margin-top:4% ;
-    margin-bottom: 4%;
-  display:flex;
-  justify-content: space-around;
-}
-p,h4{
-    margin-left:0px;
-    margin-top:2%;  
-}
-h4{
-    margin-bottom:3%;
-    font-size:15px;
-    font-family: Helvetica,Arial,sans-serif;
-}
-#bagwish{
-    color:white;
-    width:90%;
-    height:30px;
-    font-size:small;
-    border:0;
-    margin-top:-10px;
-    background-color:rgb(230, 20, 125);
-    border-radius:15px;
-    display:block;
-    margin:auto;
-}
-
-#percentoffwish{
-    color:red;
-}
-
-h2{
-    margin-top:10%;
-    font-family: Helvetica,Arial,sans-serif;
-    margin-left:5%;
-    margin-bottom: 0;
-}
-
-@media only screen and(min-width:0px)and (max-width:420px){
-    #containerwish{
-    grid-template-columns:repeat(1, 1fr);
-     
-    }
-}
-@media only screen and(min-width:421px)and (max-width:900px){
-    #containerwish{
-   grid-template-columns: repeat(2, 1fr);     
-    }
-}
-/* @media only screen and(min-width:901px)and (max-width:1200px){
-    #containerwish{
-   grid-template-columns: repeat(3, 1fr);     
-    }
-} */
-
-
-#deletewish{
-    width:50%;
-    padding:2%;
-    margin:auto;
-    display: block;
-    margin-top: 3%;
-    border-radius: 5px;
-    border:0;
-    background-color:thistle;
-}
-
-.price{
-    font-size:larger;
-}
-
-    </style>
+   #percentoffwish{
+       color:red;
+   }
+   
+   h2{
+       margin-top:10%;
+       font-family: Helvetica,Arial,sans-serif;
+       margin-left:5%;
+       margin-bottom: 0;
+   }
+   
+   @media only screen and(min-width:0px)and (max-width:420px){
+       #containerwish{
+       grid-template-columns:repeat(1, 1fr);
+        
+       }
+   }
+   @media only screen and(min-width:421px)and (max-width:900px){
+       #containerwish{
+        
+             grid-template-columns: repeat(2, 1fr);     
+       }
+   }
+   /* @media only screen and(min-width:901px)and (max-width:1200px){
+       #containerwish{
+      grid-template-columns: repeat(3, 1fr);     
+       }
+   } */
+   
+   
+   #deletewish{
+       width:50%;
+       padding:2%;
+       margin:auto;
+       display: block;
+       margin-top: 3%;
+       border-radius: 5px;
+       border:0;
+       background-color:thistle;
+   }
+   
+   .price{
+       font-size:larger;
+   }
+   
+       </style>
 </head>
 <body>
     <header>
-    <div id="headbar_vam">
-        <div id="boxl_vam">
-            <a href="landing_page.html">
-                <img src="https://cdn.iconscout.com/icon/free/png-256/myntra-2709168-2249158.png"/>
-            </a>
-            <div class="men_vam">
+        <div id="headbar_vam">
+            <div id="boxl_vam">
+              <a href="landing_page.html">
+                <img
+                  src="https://cdn.iconscout.com/icon/free/png-256/myntra-2709168-2249158.png"
+                />
+              </a>
+              <div class="men_vam">
                 <a onclick="window.location.href='men.html'">MEN</a> 
                 <div class="dropdown-content_men_vam">
-                    <hr>
-                    <div class="ddm_men_vam">
-                        <div>
-                            <h6>TopWear</h6>
-                            <p>T-Shirts</p>
-                            <p>Jackets</p>
-                        </div>
-                        <div>
-                            <h6>BottomWear</h6>
-                            <p>Jeans</p>
-                            <p>Shoes</p>
-                        </div>
-                    </div> 
+                  <hr />
+                  <div class="ddm_men_vam">
+                    <div>
+                        <h6>TopWear</h6>
+                        <p onclick="window.location.href='men_tshirt.html'">Shirts</p>
+                        <p onclick="window.location.href='men_jacket.html'">Jackets</p>
+                      </div>
+                      <div>
+                        <h6>BottomWear</h6>
+                        <p onclick="window.location.href='men_jeans.html'">Jeans</p>
+                        <p onclick="window.location.href='men_shoes.html'">Shoes</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+                <div class="men_vam">
+                  <div onclick="window.location.href='women.html'">WOMEN</div>
+                  <div class="dropdown-content_men_vam">
+                    <hr />
+                    <div class="ddm_men_vam">
+                      <div>
+                        <h6>TopWear</h6>
+                        <p onclick="window.location.href='women_kurta.html'">Kurtas</p>
+                        <p onclick="window.location.href='women_jacket.html'">Jackets</p>
+                      </div>
+                      <div>
+                        <h6>BottomWear</h6>
+                        <p onclick="window.location.href='women_jeans.html'">Jeans</p>
+                        <p onclick="window.location.href='women_shoes.html'">Shoes</p>
+                      </div>
+                      </div>
+                </div>
+              </div>
+              <div>KIDS</div>
+              <div>HOME & LIVING</div>
+              <div>BEAUTY</div>
+              <div>STUDIO<sup>New</sup></div>
             </div>
-            <div class="men_vam">
-                <div onclick="window.location.href='women.html'">WOMEN</div>
-                <div class="dropdown-content_men_vam">
-                    <hr>
-                    <div class="ddm_men_vam">
-                        <div>
-                            <h6>TopWear</h6>
-                            <p>Kurtas</p>
-                            <p>Jackets</p>
-                        </div>
-                        <div>
-                            <h6>BottomWear</h6>
-                            <p>Jeans</p>
-                            <p>Shoes</p>
-                        </div>
-                    </div> 
-                </div>
-            </div>   
-            <div>KIDS</div>
-            <div>HOME & LIVING</div>
-            <div>BEAUTY</div>
-            <div>STUDIO<sup>New</sup></div>
-        </div>
-        
-        <div id="boxm_vam">
-            <input type="text" placeholder="Search for products brand and more">
-        </div>
-        <div id="boxr_vam">
-            <div class="profile_vam">
+    
+            <div id="boxm_vam">
+              <input type="text" placeholder="Search for products brand and more" />
+            </div>
+            <div id="boxr_vam">
+              <div class="profile_vam">
                 <i class="fas fa-user"></i>
                 <p>Profile</p>
-               <div class="dropdown-content_vam">
-                   <hr>
-                   <div class="dc_b1_vam">
-                       <p>Welcome</p>
-                       <p>To access account and manage order</p>
-                       <button onclick="window.location.href='signup.html'">SIGN UP</a>
-                       <button onclick="window.location.href='login.html'">LOG IN</a>
-                   </div>
-                   <hr>
-                   <div class="dc_b2_vam">
-                       <p onclick= "window.location.href='my_orders.html'">My Orders</p>
-                       <p onclick= "window.location.href='wishlist.html'">Wishlist</p>
-                       <p>Gift Cards</p>
-                       <p>Coupons</p>
-                   </div>
-               </div>    
+                <div class="dropdown-content_vam">
+                  <hr />
+                  <div class="dc_b1_vam">
+                    <p id="hello_vam"></p>
+                    <hr />
+                    <p>Welcome</p>
+                    <p>To access account and manage order</p>
+                    <button onclick="window.location.href='signup.html'">SIGN UP</a>
+                    <button onclick="window.location.href='login.html'">LOG IN</a>
+                  </div>
+                  <hr />
+                  <div class="dc_b2_vam">
+                    <p onclick="window.location.href='myOrders.html'">My Orders</p>
+                    <p onclick="window.location.href='wishlist.html'">Wishlist</p>
+                    <p>Gift Cards</p>
+                    <p>Coupons</p>
+                  </div>
+                </div>
+              </div>
+              <div class="wl_vam">
+                <i
+                  onclick="window.location.href='wishlist.html'"
+                  class="fas fa-heart"
+                ></i>
+                <p>Wishlist</p>
+              </div>
+              <div class="crt_vam" onclick="window.location.href='cart.html'">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Bag</p>
+              </div>
             </div>
-            <div class="wl_vam">
-                    <i  onclick= "window.location.href='wishlist.html'" class="fas fa-heart"></i>
-                <p>Wishlist</p></div>
-            <div class="crt_vam" onclick= "window.location.href='cart.html'"><i class="fas fa-shopping-cart"></i><p>Bag</p></div>
-        </div>
-    </div>
-
+          </div>
 </header>
    <h2></h2>
     <div id="containerwish"></div>
