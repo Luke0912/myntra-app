@@ -141,6 +141,7 @@
     tp=Bag.reduce(function(ac,cv){
         return ac+Number(cv.price);
     },0)
+    localStorage.setItem("total_price",tp);
     dm=tm-tp;
     console.log(tm,dm,tp);
     var count=0;
@@ -154,6 +155,7 @@
                 cd=Math.ceil(0.3*tp);
                 console.log(cd);
                 tp=tp-cd;
+                localStorage.setItem("total_price",tp);
                 console.log(tp);
                 document.querySelector(".cd_vam_4").textContent="-₹"+cd;
                 document.querySelector(".tp_vam_4").textContent="₹"+tp;
