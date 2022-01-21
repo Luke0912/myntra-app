@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="myOrders.css" />
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="mainarea">
+     <div>
+         <h3>Account</h3>
+         <p class="user_name"></p>
+         <hr>
+     </div>
+     <div id="mainareabuttom">
+        <div id="c1">
+            <p>Overview</p>
+            <hr>
+            <p>Orders</p>
+            <p>Return Orders</p>
+            <hr>
+            <p>CREDITS</p>
+            <p>Coupons</p>
+            <p>Credit</p> 
+            <p>MynCash</p>
+        </div>
+        <div id="c2">
+        </div>
+    </div>
+    </div>
+    
+</body>
+</html>
+<script>
+    document.querySelector(".user_name").textContent=(localStorage.getItem("User_name"));
+    var items=JSON.parse(localStorage.getItem("My_orders"))||[];
+    create_myorders(items);
+    function create_myorders(items){
+        items.map(function(elem,i){
+        var divm=document.createElement("div");
+        divm.setAttribute("class","boxi_vam_4")
+        var div=document.createElement("div");
+        div.setAttribute("class","boxl_vam_4")
+        var img=document.createElement("img");
+        img.setAttribute("src",elem.image_link); 
+        var divt=document.createElement("div")  
+        divt.setAttribute("class","boxr_vam_4");   
+        var h_name= document.createElement("h5");
+        h_name.textContent=elem.brandname;
+        var h5=document.createElement("h5");
+        h5.textContent=elem.name;
+        var p1=document.createElement("p");
+        p1.setAttribute("class","pri");
+        p1.textContent="Rs."+elem.price;
+        var p2=document.createElement("p");
+        p2.setAttribute("class","spri_vam_4");
+        // btnd.textContent=<i class="fas fa-times"></i>;
+        p2.textContent="Rs."+elem.strikedoffprice;  
+        document.querySelector("#c2").append(divm);
+        divm.append(div,divt);
+        div.append(img);
+        divt.append(h_name,h5,p1,p2);
+        
+    })  
+    }
+
+
+</script>
