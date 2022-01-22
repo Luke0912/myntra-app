@@ -71,3 +71,53 @@
 .bold_vam_5{
     font-weight: 700;
 }
+@media screen and (max-width:900px){
+    #boxr_vam_5{
+        
+        width: 30%;
+    }
+    #boxl_vam_5{
+        width: 60%;
+        border-right:solid rgba(27, 31, 35, 0.15) 1px;
+    }
+    #table_vam_5{
+        width: 200px;
+        margin-top: 100px;
+    
+        margin-left: 3%;
+        margin-bottom: 100px;
+    }
+    #boxl1_vam_5{
+        margin: auto;
+        width: 60%;
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        margin-top: 100px;
+        padding: 5%;
+        margin-left: 5%;
+        margin-bottom: 40px;
+    }
+    #add1_vam_5>h6,#add2_vam_5>h6{
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+    #add1_vam_5>input,#add2_vam_5>input{
+      
+        height: 20px;
+        
+    }
+    #add3_vam_5>input{
+      
+        height: 20px;
+       
+    }
+    #gpay_vam_5>button{
+        width: 41%;
+        margin-top: 10px;
+        background-color: #ff3f6c;
+        color: white;
+        font-size: 12px;
+        padding: 3px 0px 3px 0px;
+        border: none;
+        margin-left: 20%;
+    }
+}
