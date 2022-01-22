@@ -45,3 +45,19 @@ body{
     width: 60%;
     margin-left: 19%;
 }
+@media screen and (max-width:900px){
+    #signup_vam_2{
+        width: 55%;
+    }
+    #boxu_vam_2>img{
+        height:150px;
+    }
+    .names_vam_2,.email_vam_2,.mobile_vam_2,.user_vam_2,.pass_vam_2{
+        height: 20px;
+       
+    }
+    #btn_vam_2{
+        padding: 6px; 
+        font-size: 16px;
+    }
+}
