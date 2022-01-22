@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/styles/myOrders.css" />
-    <link rel="stylesheet" href="./navbar_.css" />
+    <link rel="stylesheet" href="navbar_.css" />
+    <script src="https://kit.fontawesome.com/629044acfa.js" crossorigin="anonymous"></script>
+
     <title>Document</title>
     <style>
     </style>
@@ -13,6 +15,7 @@
 <body>
     <header>
         <div id="headbar_vam">
+
             <div id="boxl_vam">
               <a href="landing_page.html">
                 <img
@@ -25,34 +28,34 @@
                   <hr />
                   <div class="ddm_men_vam">
                     <div>
-                      <h6>TopWear</h6>
-                      <p>T-Shirts</p>
-                      <p>Jackets</p>
-                    </div>
-                    <div>
-                      <h6>BottomWear</h6>
-                      <p>Jeans</p>
-                      <p>Shoes</p>
+                        <h6>TopWear</h6>
+                        <p onclick="window.location.href='men_tshirt.html'">T-Shirts</p>
+                        <p onclick="window.location.href='men_jacket.html'">Jackets</p>
+                      </div>
+                      <div>
+                        <h6>BottomWear</h6>
+                        <p onclick="window.location.href='men_jeans.html'">Jeans</p>
+                        <p onclick="window.location.href='men_shoes.html'">Shoes</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="men_vam">
-                <div onclick="window.location.href='women.html'">WOMEN</div>
-                <div class="dropdown-content_men_vam">
-                  <hr />
-                  <div class="ddm_men_vam">
-                    <div>
-                      <h6>TopWear</h6>
-                      <p>Kurtas</p>
-                      <p>Jackets</p>
-                    </div>
-                    <div>
-                      <h6>BottomWear</h6>
-                      <p>Jeans</p>
-                      <p>Shoes</p>
-                    </div>
-                  </div>
+                <div class="men_vam">
+                  <div onclick="window.location.href='women.html'">WOMEN</div>
+                  <div class="dropdown-content_men_vam">
+                    <hr />
+                    <div class="ddm_men_vam">
+                      <div>
+                        <h6>TopWear</h6>
+                        <p onclick="window.location.href='women_kurta.html'">Kurtas</p>
+                        <p onclick="window.location.href='women_jacket.html'">Jackets</p>
+                      </div>
+                      <div>
+                        <h6>BottomWear</h6>
+                        <p onclick="window.location.href='women_jeans.html'">Jeans</p>
+                        <p onclick="window.location.href='women_shoes.html'">Shoes</p>
+                      </div>
+                      </div>
                 </div>
               </div>
               <div>KIDS</div>
@@ -80,7 +83,7 @@
                   </div>
                   <hr />
                   <div class="dc_b2_vam">
-                    <p onclick="window.location.href='my_orders.html'">My Orders</p>
+                    <p onclick="window.location.href='myOrders.html'">My Orders</p>
                     <p onclick="window.location.href='wishlist.html'">Wishlist</p>
                     <p>Gift Cards</p>
                     <p>Coupons</p>
@@ -118,6 +121,7 @@
             <p>Coupons</p>
             <p>Credit</p> 
             <p>MynCash</p>
+            <hr>
         </div>
         <div id='line'></div>
         <div id="c2">
@@ -147,11 +151,11 @@
         h5.textContent=elem.name;
         var p1=document.createElement("p");
         p1.setAttribute("class","pri");
-        p1.textContent="Rs."+elem.price;
+        p1.textContent="₹"+elem.price;
         var p2=document.createElement("p");
         p2.setAttribute("class","spri_vam_4");
         // btnd.textContent=<i class="fas fa-times"></i>;
-        p2.textContent="Rs."+elem.strikedoffprice;  
+        p2.textContent="₹"+elem.strikedoffprice;  
         document.querySelector("#c2").append(divm);
         divm.append(div,divt);
         div.append(img);
