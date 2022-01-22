@@ -196,5 +196,22 @@
        displayData(wishlistArr);
        document.querySelector("h2").textContent=`My Wishlist ${wishlistArr.length} items`
    }
+
+   var user_name=(localStorage.getItem("User_name"));
+    
+    document.querySelector("#hello_vam").textContent="Hello "+user_name;
+    var toggle_button=document.querySelector("#toggle_button");
+    // toggle_button.addEventListener("click",give_menu());
+    var show=document.querySelector("#boxl_vam");
+    var head=document.querySelector("#headbar_vam")
+    // function give_menu(){
+    //   // 
+    //   console.log('click');
+    // }
+      toggle_button.addEventListener("click",() =>{
+        show.classList.toggle('active');
+        head.classList.toggle('active');
+        console.log("kk")
+      })
   
 </script>
