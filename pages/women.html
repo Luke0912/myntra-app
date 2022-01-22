@@ -277,6 +277,18 @@ function handlePriceSort(){
        var name = document.createElement("p");
        name.textContent = data.name;
 
+       var divr = document.createElement('div')
+       divr.setAttribute("id","divr")
+
+       var rating = document.createElement('h4')
+       rating.textContent = data.rating
+
+       var star = document.createElement('h3')
+       star.textContent = " ★"
+       star.style.color="rgb(20,149,143)"
+
+       divr.append(rating,star)
+
        var brand =document.createElement("h4");
        brand.textContent = data.brandname;
 
@@ -325,7 +337,7 @@ function handlePriceSort(){
        
 
        //append
-       div.append(img,btn1,brand,name,div2,btn)
+       div.append(img,divr,btn1,brand,name,div2,btn)
 
 
        document.querySelector("#containermen").append(div)
