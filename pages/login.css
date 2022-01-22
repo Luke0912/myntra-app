@@ -56,3 +56,24 @@ body{
         color: #f32857;
         font-weight: 600;
     }
+    @media screen and (max-width:900px){
+        #signin_vam3{
+            width: 55%;
+        }
+        .user_vam3,.pass_vam3{
+            height: 20px;
+        }
+        #btn_vam3{
+            padding: 6px;
+            font-size: 16px;
+            margin-left: 70px;
+        }
+        #boxu_vam3>img{
+            height: 150px;
+        }
+        #boxd_vam3>h2{
+            margin-bottom: 20px;
+            margin-left: 20px;
+            font-size: 20px;
+        }
+    }
