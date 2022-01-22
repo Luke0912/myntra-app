@@ -107,7 +107,7 @@
           <h3 >FILTERS</h3>
          
            <select id="priceSort" onchange="handlePriceSort()">
-              <option value="">Sort By : <h4>Recommended</h4></option>
+              <option value="">Sort By : Recommended</option>
               <option value="high">High to low</option>
               <option value="low">Low to high</option>
             </select>
@@ -124,7 +124,7 @@
               <input type="checkbox" class="categoryS" value="Shoes" onclick="categorys()">Shoes</input><br>
               <input type="checkbox" class="categoryJ" value="Jacket" onclick="categoryJ()">Jacket</input><br>
               <input type="checkbox" class="categoryje" value="Jeans" onclick="categoryje()">Jeans</input><br>
-              <input type="checkbox" class="categoryC" value="Kurtas & Suits" onclick="categoryC()">Kurtas & Suits</input><br>
+              <input type="checkbox" class="categoryC" value="Kurtas & Suits" onclick="categoryC()">Kurtas</input><br>
                
              
   
@@ -277,6 +277,18 @@ function handlePriceSort(){
        var name = document.createElement("p");
        name.textContent = data.name;
 
+       var divr = document.createElement('div')
+       divr.setAttribute("id","divr")
+
+       var rating = document.createElement('h4')
+       rating.textContent = data.rating
+
+       var star = document.createElement('h3')
+       star.textContent = " ★"
+       star.style.color="rgb(20,149,143)"
+
+       divr.append(rating,star)
+
        var brand =document.createElement("h4");
        brand.textContent = data.brandname;
 
@@ -325,7 +337,7 @@ function handlePriceSort(){
        
 
        //append
-       div.append(img,btn1,brand,name,div2,btn)
+       div.append(img,divr,btn1,brand,name,div2,btn)
 
 
        document.querySelector("#containermen").append(div)

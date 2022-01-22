@@ -25,34 +25,34 @@
               <hr />
               <div class="ddm_men_vam">
                 <div>
-                  <h6>TopWear</h6>
-                  <p>T-Shirts</p>
-                  <p>Jackets</p>
-                </div>
-                <div>
-                  <h6>BottomWear</h6>
-                  <p>Jeans</p>
-                  <p>Shoes</p>
+                    <h6>TopWear</h6>
+                    <p onclick="window.location.href='men_tshirt.html'">Shirts</p>
+                    <p onclick="window.location.href='men_jacket.html'">Jackets</p>
+                  </div>
+                  <div>
+                    <h6>BottomWear</h6>
+                    <p onclick="window.location.href='men_jeans.html'">Jeans</p>
+                    <p onclick="window.location.href='men_shoes.html'">Shoes</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="men_vam">
-            <div onclick="window.location.href='women.html'">WOMEN</div>
-            <div class="dropdown-content_men_vam">
-              <hr />
-              <div class="ddm_men_vam">
-                <div>
-                  <h6>TopWear</h6>
-                  <p>Kurtas</p>
-                  <p>Jackets</p>
-                </div>
-                <div>
-                  <h6>BottomWear</h6>
-                  <p>Jeans</p>
-                  <p>Shoes</p>
-                </div>
-              </div>
+            <div class="men_vam">
+              <div onclick="window.location.href='women.html'">WOMEN</div>
+              <div class="dropdown-content_men_vam">
+                <hr />
+                <div class="ddm_men_vam">
+                  <div>
+                    <h6>TopWear</h6>
+                    <p onclick="window.location.href='women_kurta.html'">Kurtas</p>
+                    <p onclick="window.location.href='women_jacket.html'">Jackets</p>
+                  </div>
+                  <div>
+                    <h6>BottomWear</h6>
+                    <p onclick="window.location.href='women_jeans.html'">Jeans</p>
+                    <p onclick="window.location.href='women_shoes.html'">Shoes</p>
+                  </div>
+                  </div>
             </div>
           </div>
           <div>KIDS</div>
@@ -80,7 +80,7 @@
               </div>
               <hr />
               <div class="dc_b2_vam">
-                <p onclick="window.location.href='my_orders.html'">My Orders</p>
+                <p onclick="window.location.href='myOrders.html'">My Orders</p>
                 <p onclick="window.location.href='wishlist.html'">Wishlist</p>
                 <p>Gift Cards</p>
                 <p>Coupons</p>
@@ -125,7 +125,7 @@
             <input type="checkbox" class="categoryS" value="Shoes" onclick="categorys()">Shoes</input><br>
             <input type="checkbox" class="categoryJ" value="Jacket" onclick="categoryJ()">Jacket</input><br>
             <input type="checkbox" class="categoryje" value="Jeans" onclick="categoryje()">Jeans</input><br>
-            <input type="checkbox" class="categoryC" value="Casual Shirts" onclick="categoryC()">Casual Shirts</input><br>
+            <input type="checkbox" class="categoryC" value="Casual Shirts" onclick="categoryC()">Shirts</input><br>
              
            
 
@@ -166,19 +166,19 @@ function handlePriceSort(){
    var selected = document.querySelector("#priceSort").value
    console.log(selected)
    if(selected == "high"){
-     //decending
+    
      mensData.sort(function(a,b){
        return b.price-a.price
      })
      
    }
    if(selected == "low"){
-     //accending
+     
      mensData.sort(function(a,b){
        return a.price-b.price;
      })
    }
-   // console.log(mensdata)
+  
    displayData(mensData);
 
  }
@@ -271,18 +271,30 @@ function handlePriceSort(){
    mensData.map(function (data){
        var div = document.createElement("div");
 
-       //create image
+       
        var img = document.createElement('img');
        img.setAttribute("src",data.image_link);
 
-       //name creation
+       var divr = document.createElement('div')
+       divr.setAttribute("id","divr")
+
+       var rating = document.createElement('h4')
+       rating.textContent = data.rating
+
+       var star = document.createElement('h3')
+       star.textContent = " ★"
+       star.style.color="rgb(20,149,143)"
+
+       divr.append(rating,star)
+
+      
        var name = document.createElement("p");
        name.textContent = data.name;
 
        var brand =document.createElement("h4");
        brand.textContent = data.brandname;
 
-       //price  creation;
+      
        var div2 = document.createElement("div");
        div2.setAttribute("id","flex")
  
@@ -304,7 +316,7 @@ function handlePriceSort(){
        
 
      
-       // wishlist
+     
        var btn1 = document.createElement("button")
        btn1.setAttribute("id","menwishlist") 
        btn1.textContent = " ♡ WISHLIST"
@@ -314,7 +326,7 @@ function handlePriceSort(){
        });
 
 
-       //  add to bag
+    
        var btn = document.createElement("button")
        btn.setAttribute("id","bagmen")
        btn.textContent = "MOVE TO BAG";
@@ -326,8 +338,8 @@ function handlePriceSort(){
 
        
 
-       //append
-       div.append(img,btn1,brand,name,div2,btn)
+    
+       div.append(img,divr,btn1,brand,name,div2,btn)
 
 
        document.querySelector("#containermen").append(div)

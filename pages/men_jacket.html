@@ -118,26 +118,13 @@
     <div id="bottom">
         <div id="left">
 
-          
-            <!-- <h4>CATEGORIES</h4>
-            <br>
-
-            <input type="checkbox" class="categoryS" value="Shoes" onclick="categorys()">Shoes</input><br>
-            <input type="checkbox" class="categoryJ" value="Jacket" onclick="categoryJ()">Jacket</input><br>
-            <input type="checkbox" class="categoryje" value="Jeans" onclick="categoryje()">Jeans</input><br>
-            <input type="checkbox" class="categoryC" value="Casual Shirts" onclick="categoryC()">Casual Shirts</input><br>
-              -->
-           
-
-              <!-- <hr id="bottomhr"> -->
+        
 
               <h3 id="brandh3">Brand</h3>
               <br>
 
               <input type="checkbox" id="filterbrandA" value="ADIDAS" onclick="filterbrandA()">Adidas</input><br>
               <input type="checkbox" id="filterbrandN" value="NIKE" onclick="filterbrandN()">Nike</input><br>
-              <input type="checkbox" id="filterbrandR" value="ROADSTER" onclick="filterbrandR()">Roadster</input><br>
-              <input type="checkbox" id="filterbrandW" value="WROGN" onclick="filterbrandW()">Wrogn</input><br>
               
           
         </div>
@@ -162,7 +149,6 @@
 
     var wishlist =JSON.parse(localStorage.getItem("WishlistItems"))||[]
 
-    // displayData(mensData);
 
     
 
@@ -170,19 +156,19 @@ function handlePriceSort(){
    var selected = document.querySelector("#priceSort").value
    console.log(selected)
    if(selected == "high"){
-     //decending
+     
      mensData_jacket.sort(function(a,b){
        return b.price-a.price
      })
      
    }
    if(selected == "low"){
-     //accending
+    
      mensData_jacket.sort(function(a,b){
        return a.price-b.price;
      })
    }
-   // console.log(mensdata)
+ 
    displayData(mensData_jacket);
 
  }
@@ -233,41 +219,7 @@ function handlePriceSort(){
 
  displayData(mensData_jacket)
 
-//  function categorys(){
-//      var selectcategory = document.querySelector(".categoryS").value
-//      console.log(selectcategory)
-//      var categoryname = mensData.filter(function(elem){
-//          return elem.category == selectcategory;
-//      })
-//      displayData(categoryname)
-//  }
 
-//  function categoryJ(){
-//      var selectcategory = document.querySelector(".categoryJ").value
-//      console.log(selectcategory)
-//      var categoryname = mensData.filter(function(elem){
-//          return elem.category == selectcategory;
-//      })
-//      displayData(categoryname)
-//  }
-
-//  function categoryje(){
-//      var selectcategory = document.querySelector(".categoryje").value
-//      console.log(selectcategory)
-//      var categoryname = mensData.filter(function(elem){
-//          return elem.category == selectcategory;
-//      })
-//      displayData(categoryname)
-//  }
-
-//  function categoryC(){
-//      var selectcategory = document.querySelector(".categoryC").value
-//      console.log(selectcategory)
-//      var categoryname = mensData.filter(function(elem){
-//          return elem.category == selectcategory;
-//      })
-//      displayData(categoryname)
-//  }
 
                function displayData(mensData_jacket){
    document.querySelector("#containermen").innerHTML=""
@@ -275,18 +227,30 @@ function handlePriceSort(){
    mensData_jacket.map(function (data){
        var div = document.createElement("div");
 
-       //create image
+      
        var img = document.createElement('img');
        img.setAttribute("src",data.image_link);
 
-       //name creation
+       var divr = document.createElement('div')
+       divr.setAttribute("id","divr")
+
+       var rating = document.createElement('h4')
+       rating.textContent = data.rating
+       rating.style.color="white"
+
+       var star = document.createElement('h3')
+       star.textContent = " ★"
+       star.style.color="rgb(20,149,143)"
+
+       divr.append(rating,star)
+
        var name = document.createElement("p");
        name.textContent = data.name;
 
        var brand =document.createElement("h4");
        brand.textContent = data.brandname;
 
-       //price  creation;
+     
        var div2 = document.createElement("div");
        div2.setAttribute("id","flex")
  
@@ -331,7 +295,7 @@ function handlePriceSort(){
        
 
        //append
-       div.append(img,btn1,brand,name,div2,btn)
+       div.append(img,divr,btn1,brand,name,div2,btn)
 
 
        document.querySelector("#containermen").append(div)
