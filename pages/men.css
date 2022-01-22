@@ -182,3 +182,12 @@ body{
 }
 
 }
+#divr{
+   width:25%;
+    padding:2%;
+    margin-top:-15%;
+    display:flex;
+    justify-content: space-evenly;
+    margin-bottom: 5%;
+   
+}

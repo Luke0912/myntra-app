@@ -136,9 +136,9 @@
   
                 <input type="checkbox" id="filterbrandA" value="ADIDAS" onclick="filterbrandA()">Adidas</input><br>
                 <input type="checkbox" id="filterbrandN" value="NIKE" onclick="filterbrandN()">Nike</input><br>
-                <input type="checkbox" id="filterbrandR" value="LIBAS" onclick="filterbrandR()">Libas</input><br>
+                <!-- <input type="checkbox" id="filterbrandR" value="LIBAS" onclick="filterbrandR()">Libas</input><br>
                 <input type="checkbox" id="filterbrandW" value="ANOUK" onclick="filterbrandW()">Anouk</input><br>
-                
+                 -->
             
           </div>
           <div id="containermen">
@@ -230,41 +230,6 @@ function handlePriceSort(){
 
  displayData(womensData_jacket)
 
-//  function categorys(){
-//      var selectcategory = document.querySelector(".categoryS").value
-//      console.log(selectcategory)
-//      var categoryname = womensData_jacket.filter(function(elem){
-//          return elem.category == selectcategory;
-//      })
-//      displayData(categoryname)
-//  }
-
-//  function categoryJ(){
-//      var selectcategory = document.querySelector(".categoryJ").value
-//      console.log(selectcategory)
-//      var categoryname = womensData_jacket.filter(function(elem){
-//          return elem.category == selectcategory;
-//      })
-//      displayData(categoryname)
-//  }
-
-//  function categoryje(){
-//      var selectcategory = document.querySelector(".categoryje").value
-//      console.log(selectcategory)
-//      var categoryname = womensData_jacket.filter(function(elem){
-//          return elem.category == selectcategory;
-//      })
-//      displayData(categoryname)
-//  }
-
-//  function categoryC(){
-//      var selectcategory = document.querySelector(".categoryC").value
-//      console.log(selectcategory)
-//      var categoryname = womensData_jacket.filter(function(elem){
-//          return elem.category == selectcategory;
-//      })
-//      displayData(categoryname)
-//  }
 
                function displayData(womensData_jacket){
    document.querySelector("#containermen").innerHTML=""
@@ -279,6 +244,18 @@ function handlePriceSort(){
        //name creation
        var name = document.createElement("p");
        name.textContent = data.name;
+
+       var divr = document.createElement('div')
+       divr.setAttribute("id","divr")
+
+       var rating = document.createElement('h4')
+       rating.textContent = data.rating
+
+       var star = document.createElement('h3')
+       star.textContent = " ★"
+       star.style.color="rgb(20,149,143)"
+
+       divr.append(rating,star)
 
        var brand =document.createElement("h4");
        brand.textContent = data.brandname;
@@ -328,7 +305,7 @@ function handlePriceSort(){
        
 
        //append
-       div.append(img,btn1,brand,name,div2,btn)
+       div.append(img,divr,btn1,brand,name,div2,btn)
 
 
        document.querySelector("#containermen").append(div)
