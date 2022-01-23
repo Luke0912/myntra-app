@@ -15,9 +15,16 @@
 </head>
 <body>
     <header>
+      <header>
         <div id="headbar_vam">
-
+          <a id="toggle_button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+  
+          </a>
             <div id="boxl_vam">
+             
               <a href="landing_page.html">
                 <img
                   src="https://cdn.iconscout.com/icon/free/png-256/myntra-2709168-2249158.png"
@@ -161,6 +168,27 @@
         divm.append(div,divt);
         div.append(img);
         divt.append(h_name,h5,p1,p2);
+
+        var user_name = localStorage.getItem("User_name");
+  document.querySelector("#hello_vam").textContent = "Hello " + user_name;
+  
+  var toggle_button=document.querySelector("#toggle_button");
+        // toggle_button.addEventListener("click",give_menu());
+        var show=document.querySelector("#boxl_vam");
+        var head=document.querySelector("#headbar_vam")
+        // function give_menu(){
+        //   // 
+        //   console.log('click');
+        // }
+          toggle_button.addEventListener("click",() =>{
+            show.classList.toggle('active');
+            head.classList.toggle('active');
+            console.log("kk")
+          })
+  function inoutFunction(event) {
+    event.classList.toggle("hide");
+    event.classList.toggle("show");
+  }
         
     })  
     }
