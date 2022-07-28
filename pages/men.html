@@ -158,7 +158,6 @@
 
 <script>
     var mensData = JSON.parse(localStorage.getItem("mensData"))
-    console.log(mensData);
 
     var cart =JSON.parse(localStorage.getItem("CartItems"))||[]
 
@@ -193,18 +192,16 @@ function handlePriceSort(){
 
  function filterbrandA() {
    var selected = document.querySelector("#filterbrandA").value
-   console.log(selected);
 
    var filtername = mensData.filter(function(elem){
      return elem.brandname == selected;
    })
-   console.log(filtername)
    displayData(filtername)
  }
 
  function filterbrandN(){
    var selected = document.querySelector("#filterbrandN").value
-   console.log(selected);
+
 
    var filtername = mensData.filter(function(elem){
      return elem.brandname == selected;
